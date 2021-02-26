@@ -1,5 +1,7 @@
 import React from 'react';
+import { Buttons } from './Buttons/Buttons';
 import s from "./Counter.module.css"
+import { Scoreboard } from './Scoreboard/Scoreboard';
 
 
 export type CounterPropsType = {
@@ -9,19 +11,13 @@ export type CounterPropsType = {
 }
 
 export const Counter = (props: CounterPropsType) => {
-
-    let classForNumber = props.counterValue === 5 ? s.endNumber : ""
-
     return (
         <div className={s.counterWrapper}>
-            <div className={s.windowWithNumber}>
-                <span className={classForNumber}>{props.counterValue}</span>
-            </div>
-            <div className={s.btnWrapper}>
-                <button className={s.btn} disabled={props.counterValue >= 5} onClick={props.incOnClick}>inc</button>
-                <button className={s.btn} disabled={props.counterValue === 0} onClick={props.resetOnClick}>reset
-                </button>
-            </div>
+            <Scoreboard counterValue={props.counterValue} />
+            <Buttons counterValue={props.counterValue}
+                     incOnClick={props.incOnClick}
+                     resetOnClick={props.resetOnClick}
+            />
         </div>
     )
 }

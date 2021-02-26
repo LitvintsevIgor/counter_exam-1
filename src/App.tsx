@@ -14,7 +14,9 @@ function App() {
     <div className="App">
         <Counter counterValue={counterValue}
                  incOnClick={incOnClick}
-                 resetOnClick={resetOnClick}/>
+                 resetOnClick={resetOnClick}
+
+        />
     </div>
   );
 }
