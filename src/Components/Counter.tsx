@@ -1,23 +1,26 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from "./Counter.module.css"
 
 
-export const Counter = () => {
+export type CounterPropsType = {
+    counterValue: number
+    incOnClick: () => void
+    resetOnClick: () => void
+}
 
-    let [counterValue, setCounterValue] = useState(0);
-    let classForNumber = counterValue === 5 ? s.endNumber : ""
+export const Counter = (props: CounterPropsType) => {
 
-    const incOnClick = () => {setCounterValue(counterValue += 1)};
-    const resetOnClick = () => {setCounterValue(0)};
+    let classForNumber = props.counterValue === 5 ? s.endNumber : ""
 
     return (
         <div className={s.counterWrapper}>
             <div className={s.windowWithNumber}>
-                <span className={classForNumber}>{counterValue}</span>
+                <span className={classForNumber}>{props.counterValue}</span>
             </div>
             <div className={s.btnWrapper}>
-                <button className={s.btn} disabled={counterValue >= 5} onClick={incOnClick} >inc</button>
-                <button  className={s.btn}  disabled={counterValue === 0} onClick={resetOnClick }>reset</button>
+                <button className={s.btn} disabled={props.counterValue >= 5} onClick={props.incOnClick}>inc</button>
+                <button className={s.btn} disabled={props.counterValue === 0} onClick={props.resetOnClick}>reset
+                </button>
             </div>
         </div>
     )
