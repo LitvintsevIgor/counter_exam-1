@@ -7,7 +7,6 @@ export type buttonsStateType = {
     buttonTitle: string
     disableValue: number
     func: () => void
-
 }
 
 function App() {
@@ -36,7 +35,6 @@ function App() {
                  incOnClick={incOnClick}
                  resetOnClick={resetOnClick}
                  buttonsState={buttonsState}
-
         />
     </div>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
-import s from "./Scoreboard.module.css"
+import s from "./ScoreBoard.module.css"
 
 
 export type ScoreboardPropsType = {
     counterValue: number
 }
 
-export const Scoreboard = (props:ScoreboardPropsType) => {
+export const ScoreBoard = (props:ScoreboardPropsType) => {
 
     let classForNumber = props.counterValue === 5 ? s.endNumber : ""
 

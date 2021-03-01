@@ -14,9 +14,9 @@ export const Buttons = (props: ButtonsPropsType) => {
 
     let buttonsElements = props.buttonsState
         .map(b => <OneButton buttonTitle={b.buttonTitle}
-                             disableValue={b.disableValue}
+                             disabled={b.disableValue === props.counterValue}
                              func={b.func}
-                             counterValue={props.counterValue}/>)
+        />)
 
     return (
         <div className={s.btnWrapper}>
