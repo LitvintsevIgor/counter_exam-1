@@ -1,5 +1,4 @@
 import React from 'react';
-import { buttonsStateType } from '../App';
 import { Buttons } from './Buttons/Buttons';
 import s from "./Counter.module.css"
 import { ScoreBoard } from './ScoreBoard/ScoreBoard';
@@ -9,7 +8,8 @@ export type CounterPropsType = {
     counterValue: number
     incOnClick: () => void
     resetOnClick: () => void
-    buttonsState: buttonsStateType[]
+    maxCount: 5
+    minCount: 0
 }
 
 export const Counter = (props: CounterPropsType) => {
@@ -19,7 +19,8 @@ export const Counter = (props: CounterPropsType) => {
             <Buttons counterValue={props.counterValue}
                      incOnClick={props.incOnClick}
                      resetOnClick={props.resetOnClick}
-                     buttonsState={props.buttonsState}
+                     maxCount={props.maxCount}
+                     minCount={props.minCount}
             />
         </div>
     )

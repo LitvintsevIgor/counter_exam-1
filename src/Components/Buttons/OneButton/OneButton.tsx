@@ -4,14 +4,15 @@ import React from "react";
 export type OneButtonType = {
     buttonTitle: string
     disabled: boolean
-    func: () => void
+    buttonClick: () => void
+
 }
 
 export const OneButton = (props: OneButtonType ) => {
     return (
         <button className={s.btn}
                 disabled={props.disabled}
-                onClick={props.func}
+                onClick={props.buttonClick}
         >{props.buttonTitle}</button>
     )
 }
