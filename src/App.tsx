@@ -16,18 +16,18 @@ function App() {
     const incOnClick = () => {setCounterValue(counterValue += 1)};
     const resetOnClick = () => {setCounterValue(0)};
 
-    let buttonsState = [
-        {
-            buttonTitle: "inc",
-            disableValue: 5,
-            func: incOnClick
-        },
-        {
-            buttonTitle: "reset",
-            disableValue: 0,
-            func: resetOnClick
-        }
-    ]
+    // let buttonsState = [
+    //     {
+    //         buttonTitle: "inc",
+    //         disableValue: 5,
+    //         func: incOnClick
+    //     },
+    //     {
+    //         buttonTitle: "reset",
+    //         disableValue: 0,
+    //         func: resetOnClick
+    //     }
+    // ]
 
   return (
     <div className="App">
